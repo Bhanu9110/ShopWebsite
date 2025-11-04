@@ -1,0 +1,46 @@
+services:
+  # 🧠 Backend (API + Database)
+  - type: web
+    name: shop-backend
+    env: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: MONGO_URL
+        sync: false     # Set this manually in Render (your MongoDB Atlas URL)
+      - key: JWT_SECRET
+        sync: false     # Set this manually (your JWT secret key)
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_URL
+        value: https://shop-frontend.onrender.com
+      - key: ADMIN_URL
+        value: https://shop-admin.onrender.com
+
+  # 🧑‍💼 Admin Panel (React)
+  - type: web
+    name: shop-admin
+    env: node
+    rootDir: admin
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npx serve -s build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://shop-backend.onrender.com
+
+  # 🛍️ Frontend (Customer Storefront)
+  - type: web
+    name: shop-frontend
+    env: node
+    rootDir: frontend
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npx serve -s build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://shop-backend.onrender.com
