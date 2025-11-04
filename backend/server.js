@@ -1,40 +1,79 @@
-// import express from "express"
-// import cors from "cors"
-// import { connectDB } from "./config/db.js"
-// import foodRouter from "./routes/foodRoute.js"
-// import userRouter from "./routes/userRoute.js"
-// import 'dotenv/config.js'
-// import cartRouter from "./routes/cartRoute.js"
-// import orderRouter from "./routes/orderRoute.js"
+// // import express from "express"
+// // import cors from "cors"
+// // import { connectDB } from "./config/db.js"
+// // import foodRouter from "./routes/foodRoute.js"
+// // import userRouter from "./routes/userRoute.js"
+// // import 'dotenv/config.js'
+// // import cartRouter from "./routes/cartRoute.js"
+// // import orderRouter from "./routes/orderRoute.js"
 
-// //app config
-// const app = express()
-// const port = 4000
+// // //app config
+// // const app = express()
+// // const port = 4000
+
+// // // middleware
+// // app.use(express.json());
+// // app.use(cors());
+
+// // //db connection
+// // connectDB();
+
+// // // api endpoints
+// // app.use("/api/food",foodRouter)
+// // app.use("/images",express.static('uploads'))
+// // app.use("/api/user",userRouter)
+// // app.use("/api/cart",cartRouter);
+// // app.use("/api/order",orderRouter);
+
+
+// // app.get("/",(req,res)=>{
+// //     res.send("API Working")
+// // })
+
+// // app.listen(port,()=>{
+// //     console.log(`Server Started on http://localhost:${port}`)
+// // })
+
+// // // mongodb+srv://mahalakshmisteeltraders:23062005@cluster0.e2rg8uk.mongodb.net/?
+// import express from "express";
+// import cors from "cors";
+// import { connectDB } from "./config/db.js";
+// import foodRouter from "./routes/foodRoute.js";
+// import userRouter from "./routes/userRoute.js";
+// import "dotenv/config.js";
+// import cartRouter from "./routes/cartRoute.js";
+// import orderRouter from "./routes/orderRoute.js";
+
+// // app config
+// const app = express();
+// const port = process.env.PORT || 4000;
 
 // // middleware
 // app.use(express.json());
-// app.use(cors());
+// app.use(cors({
+//   origin: ['https://shopwebsite-frontend.onrender.com', 'https://shopwebsite-admin.onrender.com'],
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true
+// }));
 
-// //db connection
+
+// // db connection
 // connectDB();
 
 // // api endpoints
-// app.use("/api/food",foodRouter)
-// app.use("/images",express.static('uploads'))
-// app.use("/api/user",userRouter)
-// app.use("/api/cart",cartRouter);
-// app.use("/api/order",orderRouter);
+// app.use("/api/food", foodRouter);
+// app.use("/images", express.static("uploads"));
+// app.use("/api/user", userRouter);
+// app.use("/api/cart", cartRouter);
+// app.use("/api/order", orderRouter);
 
+// app.get("/", (req, res) => {
+//   res.send("API Working");
+// });
 
-// app.get("/",(req,res)=>{
-//     res.send("API Working")
-// })
-
-// app.listen(port,()=>{
-//     console.log(`Server Started on http://localhost:${port}`)
-// })
-
-// // mongodb+srv://mahalakshmisteeltraders:23062005@cluster0.e2rg8uk.mongodb.net/?
+// app.listen(port, () => {
+//   console.log(`✅ Server started on port ${port}`);
+// });
 import express from "express";
 import cors from "cors";
 import { connectDB } from "./config/db.js";
@@ -44,23 +83,25 @@ import "dotenv/config.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 
-// app config
+// App config
 const app = express();
 const port = process.env.PORT || 4000;
 
-// middleware
+// Middleware
 app.use(express.json());
 app.use(cors({
-  origin: ['https://shopwebsite-frontend.onrender.com', 'https://shopwebsite-admin.onrender.com'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  origin: [
+    "https://shopwebsite-frontend.onrender.com",
+    "https://shopwebsite-admin.onrender.com",
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
 }));
 
-
-// db connection
+// DB connection
 connectDB();
 
-// api endpoints
+// API endpoints
 app.use("/api/food", foodRouter);
 app.use("/images", express.static("uploads"));
 app.use("/api/user", userRouter);
@@ -68,7 +109,7 @@ app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
 app.get("/", (req, res) => {
-  res.send("API Working");
+  res.send("✅ API Working");
 });
 
 app.listen(port, () => {
