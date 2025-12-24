@@ -98,7 +98,7 @@ const StoreContextProvider = (props) => {
 
   // ✅ Use environment variable for backend URL
   // Make sure this is set in Render: REACT_APP_BASE_URL = https://shopwebsite-backend.onrender.com
-  const url = process.env.REACT_APP_BASE_URL;
+  const url = import.meta.env.VITE_BASE_URL;
 
   // 🛒 Add item to cart
   const addToCart = async (itemId) => {
