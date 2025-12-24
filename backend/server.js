@@ -123,6 +123,8 @@ import userRouter from "./routes/userRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 import "dotenv/config.js";
+//console.log("Stripe Key Loaded:", process.env.STRIPE_SECRET_KEY);
+
 
 // --- App Config ---
 const app = express();

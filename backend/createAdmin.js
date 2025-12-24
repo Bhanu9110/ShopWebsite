@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 const User = require('./models/User'); 
 
 // MongoDB connection string
-const mongoURI = "mongodb://localhost:27017/your-database-name"; // <-- replace with your DB name
+const mongoURI = "mongodb+srv://mahalakshmisteeltraders:23062005@cluster0.e2rg8uk.mongodb.net/food-del?retryWrites=true&w=majority"; // <-- replace with your DB name
 
 // Default admin credentials
 const adminData = {

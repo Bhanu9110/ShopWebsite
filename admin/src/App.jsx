@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
 
-const url = import.meta.env.VITE_BASE_URL;
+  const url = "https://shopwebsite-backend-gb7p.onrender.com"
 
   return (
     <div>
