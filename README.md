@@ -7,7 +7,7 @@ A full-stack **Ordering Website** built with **React (Frontend)**, **Node.js + E
 ## 🚀 Features
 
 ### 👨‍💻 User Features
-- Register and Login with Email Verification
+- Register and Login with Email
 - Secure Authentication
 - Browse and order construction items
 - Responsive UI (mobile and desktop)
@@ -33,17 +33,17 @@ A full-stack **Ordering Website** built with **React (Frontend)**, **Node.js + E
 ## 🏗️ Project Overview
 
 
-- I have built a React-based food ordering app with the following structure:
+- I have built a React-based Construction Materials ordering app with the following structure:
 
 - Global State & Context
 
-- StoreContext.jsx handles cart items, authentication token, food list, and API interactions.
+- StoreContext.jsx handles cart items, authentication token, Materials list, and API interactions.
 
-- Provides methods: addToCart, removeFromCart, getTotalCartAmount, fetchFoodList, loadCartData.
+- Provides methods: addToCart, removeFromCart, getTotalCartAmount, fetchMaterialList, loadCartData.
 
 - Pages
 
-- Home.jsx: Displays the header, menu categories, food items, and app download section.
+- Home.jsx: Displays the header, menu categories, Material items, and app download section.
 
 - Cart.jsx: Shows items in the cart with subtotal, delivery fee, total, and promo code option.
 
@@ -61,7 +61,7 @@ A full-stack **Ordering Website** built with **React (Frontend)**, **Node.js + E
 
 - Footer.jsx: (not included but presumably a simple footer).
 
-- Other smaller components like Header, ExploreMenu, FoodDisplay, AppDownload.
+- Other smaller components like Header, ExploreMenu, MaterialDisplay, AppDownload.
 
 - Styling
 
